@@ -1,5 +1,5 @@
 
-**Portfolio Website**  
+**Portfolio Website:-**  
 A fully responsive and visually appealing personal portfolio website built using HTML, CSS, and JavaScript. This project showcases expertise in modern web design and development, with features like dynamic text animations, responsive layouts, and interactive UI components.
 
 **Features:**  
@@ -12,4 +12,3 @@ A fully responsive and visually appealing personal portfolio website built using
 - HTML  
 - CSS (with custom animations and styling)  
 - JavaScript (for interactivity and functionality)
-
