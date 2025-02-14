@@ -13,4 +13,3 @@ A fully responsive and visually appealing personal portfolio website built using
 - CSS (with custom animations and styling)  
 - JavaScript (for interactivity and functionality)
 
-Feel free to use, modify, and adapt this project for your personal or professional needs. Contributions are always welcome!
