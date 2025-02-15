@@ -23,10 +23,9 @@ window.onscroll = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const words = [
-        "Frontend Developer",
-        "Web Designer",
+        "Software Engineer",
         "UI/UX Specialist",
-        "Software Engineer"
+        "Web Designer"
     ];
     
     let wordIndex = 0;
@@ -109,6 +108,18 @@ function formatMessage() {
 
     return true; // Allow the form to be submitted
 }
+
+// Add floating particle effects to make the design more dynamic
+document.querySelectorAll(".services-box").forEach((box) => {
+    box.addEventListener("mousemove", (e) => {
+        const boxRect = box.getBoundingClientRect();
+        const x = e.clientX - boxRect.left;
+        const y = e.clientY - boxRect.top;
+
+        box.style.setProperty("--mouse-x", `${x}px`);
+        box.style.setProperty("--mouse-y", `${y}px`);
+    });
+});
 
 // Function to send contact form data to WhatsApp
 function sendContactToWhatsApp(event) {

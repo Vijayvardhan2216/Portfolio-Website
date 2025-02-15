@@ -187,7 +187,6 @@ span{
     display: flex;
     align-items: center;
 }
-
 .text-animation span {
     color: var(--main-color);
     font-weight: bold;
@@ -203,7 +202,6 @@ span{
 @keyframes blinkCursor {
     50% { border-right-color: transparent; }
 }
-
 /* Popup Styles - Ensuring it's on top */
 .popup {
     display: none;
@@ -220,13 +218,11 @@ span{
     text-align: center;
     z-index: 1000; /* Ensures it appears on top */
 }
-
 /* Dark Theme Content */
 .popup-content {
     color: var(--text-color);
     position: relative;
 }
-
 /* Close Button */
 .close-btn {
     position: absolute;
@@ -236,7 +232,6 @@ span{
     font-size: 24px;
     color: var(--main-color);
 }
-
 /* Popup Inputs & Button */
 .popup input, .popup textarea {
     width: 100%;
@@ -247,7 +242,6 @@ span{
     color: var(--text-color);
     border-radius: 5px;
 }
-
 /* Button */
 .popup .btn {
     width: 100%;
@@ -258,12 +252,10 @@ span{
     cursor: pointer;
     font-weight: bold;
 }
-
 .popup .btn:hover {
     background: white;
     color: var(--bg-color);
 }
-
 /* Overlay Effect (Dimming Background) */
 .popup-overlay {
     position: fixed;
@@ -372,54 +364,100 @@ span{
     width: 50px;
 }
 
-.services{
+/* General Services Section Styling */
+.services {
     background-color: var(--bg-color);
     color: black;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
 }
-.services h2{
+.services h2 {
     margin-bottom: 5rem;
     color: white;
+    text-align: center;
+    font-size: 8rem;
+    text-transform: unset;
+    font-weight: bold;
+    animation: fade-in 1s ease-in-out;
+    letter-spacing: 0.2rem;
 }
-.services-container{
+/* Services Container */
+.services-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
+    align-items: center;
 }
-.services-box{
-    background-color: var(--main-color);
-    height: 300px;
-    border-radius: 3rem;
-    border: 5px solid transparent;
+/* Individual Service Box */
+.services-box {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.5), var(--main-color));
+    height: 350px;
+    border-radius: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
 }
-.services-box:hover{
-    background: white;
-    color: black;
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
+.services-box:hover {
+    transform: rotateY(15deg) translateZ(10px) scale(1.1);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3), 0px 5px 20px rgba(255, 255, 255, 0.2);
 }
-.services-box .services-info{
+.services-box::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    z-index: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.8;
+}
+.services-box:hover::before {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+}
+.services-info {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
     text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
+    position: relative;
+    z-index: 1;
 }
-.services-info h4{
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 2;
+.services-info h4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.services-info p{
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
+.services-info p {
+    font-size: 1.4rem;
+    font-weight: 500;
     line-height: 1.7;
-    margin: auto;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* Keyframe Animations */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .testimonials{
@@ -511,6 +549,7 @@ span{
 .contact form .btn{
     margin-top: 2rem;
 }
+
 .footer{
     position: relative;
     bottom: 0;
