@@ -377,7 +377,7 @@ span{
     margin-bottom: 5rem;
     color: white;
     text-align: center;
-    font-size: 6rem;
+    font-size: 7rem;
     text-transform: unset;
     font-weight: bold;
     animation: fade-in 1s ease-in-out;
@@ -537,7 +537,7 @@ body {
   .heading {
     text-align: center;
     margin-top: 20px; /* Reduced margin for better spacing */
-    font-size: 5rem; /* Adjusted for better responsiveness */
+    font-size: 7rem; /* Adjusted for better responsiveness */
     font-weight: bold;
     color: var(--text-color);
   } 
@@ -599,7 +599,7 @@ body {
   /* Responsive Design */
   @media (max-width: 768px) {
     .heading {
-      font-size: 2.5rem; /* Adjusted for smaller screens */
+      font-size: 6rem; /* Adjusted for smaller screens */
     }
   
     .button-container {
