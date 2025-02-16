@@ -377,7 +377,7 @@ span{
     margin-bottom: 5rem;
     color: white;
     text-align: center;
-    font-size: 8rem;
+    font-size: 6rem;
     text-transform: unset;
     font-weight: bold;
     animation: fade-in 1s ease-in-out;
@@ -514,41 +514,104 @@ span{
     color: gold;
 }
 
-.contact{
+body {
     background-color: var(--bg-color);
-}
-.contact h2{
-    margin-bottom: 3rem;
-    color: white;
-}
-.contact form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin: 5rem auto;
-    text-align: center;
-}
-.contact form .input-box{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 2.5rem;
-    font-size: 1.8rem;
     color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: 2rem;
-    border: 2px solid var(--main-color);
-    margin: 1.5rem 0;
-    resize: none;
-}
-.contact form .btn{
-    margin-top: 2rem;
-}
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .contact-section {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-container {
+    max-width: 700px;
+    background-color: var(--second-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adjusted shadow for a softer look */
+  }
+  .heading {
+    text-align: center;
+    margin-top: 20px; /* Reduced margin for better spacing */
+    font-size: 5rem; /* Adjusted for better responsiveness */
+    font-weight: bold;
+    color: var(--text-color);
+  } 
+  .contact-white {
+    color: var(--text-color);
+  }
+  .contact-main {
+    color: var(--main-color);
+  }
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: var(--second-bg-color);
+    border: 1px solid var(--main-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s ease; /* Added ease for smoother transitions */
+  }
+  .input:focus,
+  .textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Added gap for better spacing */
+  }
+  .send-button,
+  .reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .send-button {
+    background-color: var(--main-color);
+    color: var(--second-bg-color);
+  }
+  .send-button:hover {
+    background-color: var(--text-color);
+    color: var(--main-color);
+  }
+  .reset-button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--main-color);
+  }
+  .reset-button:hover {
+    background-color: var(--main-color);
+    color: var(--second-bg-color);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2.5rem; /* Adjusted for smaller screens */
+    }
+  
+    .button-container {
+      flex-direction: column; /* Stacks buttons vertically */
+      gap: 15px;
+    }
+  
+    .send-button,
+    .reset-button {
+      width: 100%; /* Buttons span full width for mobile */
+    }
+  }
 
 .footer{
     position: relative;

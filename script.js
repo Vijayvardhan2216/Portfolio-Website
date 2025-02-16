@@ -86,21 +86,29 @@ function formatMessage() {
     const emailContent = `
         📩 New Message From Your Portfolio Website 
 
-            Hello,
-                You’ve received a new inquiry through your Portfolio Website, 
-            The message details are as follows:
+        Hello, 
 
+        You’ve received a new inquiry through your Portfolio Website.
+
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+
+        📝 Submission Details:  
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━
             🔍 Submission Details:-
                 👤 Name: ${name}
                 📧 Email: ${email}
                 💬 Message: ${message}
 
+        ---------------------------------------------------------
+
             📌 Submitted On:-
                 📅 Date: ${formattedDate}
                 ⏰ Time: ${formattedTime}
 
-                Best regards,
-            Your Portfolio Website
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+        Best regards,
+        Your Portfolio Website
     `.trim();
 
     // Assign the formatted content to the hidden message field
@@ -120,43 +128,6 @@ document.querySelectorAll(".services-box").forEach((box) => {
         box.style.setProperty("--mouse-y", `${y}px`);
     });
 });
-
-// Function to send contact form data to WhatsApp
-function sendContactToWhatsApp(event) {
-    event.preventDefault(); // Prevent form refresh
-
-    // Get input values
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
-
-    // WhatsApp number (International format without "+")
-    let phoneNumber = "919403403371"; 
-
-    // Get current date and time
-    let currentDate = new Date().toLocaleDateString();
-    let currentTime = new Date().toLocaleTimeString();
-
-    // Structured WhatsApp Message (Encoding Special Characters)
-    let whatsappMessage = `🚀 *New Contact Request!*%0A%0A` + 
-                          `👤 *Name:* ${name}%0A` +
-                          `📧 *Email:* ${email}%0A` +
-                          `📞 *Phone:* ${phone}%0A` +
-                          `📌 *Subject:* ${subject}%0A%0A` +
-                          `💬 *Message:* %0A━━━━━━━━━━━━━━━━━━%0A${message}%0A%0A` +
-                          `📆 *Date:* ${currentDate}%0A` +
-                          `🕒 *Time:* ${currentTime}%0A%0A` +
-                          `✅ *Action Required: Please review and respond!*%0A` +
-                          `🔹 *Thank you!*`;
-
-    // WhatsApp API link (Make sure the message is properly encoded)
-    let whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-
-    // Open WhatsApp in a new tab
-    window.open(whatsappLink, "_blank");
-}
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
