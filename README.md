@@ -1,7 +1,7 @@
 # Portfolio-Website
 The Ultimate Personal Portfolio Website - A Fusion of Creativity and Code 🚀
 
-**Portfolio Website:-**  
+**Portfolio Website :-**  
     A fully responsive and visually appealing personal portfolio website built using HTML, CSS, and JavaScript. 
 This project showcases expertise in modern web design and development, with features like dynamic text animations, 
 responsive layouts, and interactive UI components.
